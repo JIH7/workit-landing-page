@@ -1,0 +1,11 @@
+{
+  "name": "workit-landing-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "watch": "sass --watch input.scss output.css"
+  },
+  "author": "Jeremy Helsel",
+  "license": "ISC"
+}
