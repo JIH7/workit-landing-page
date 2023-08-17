@@ -6,25 +6,37 @@
   font-family: "manrope";
   src: url(assets/fonts/manrope/Manrope-VariableFont_wght.ttf);
 }
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow: hidden;
+  position: relative;
   width: 100vw;
   min-height: 100vh;
   margin: 0;
 }
 
-.bg {
-  z-index: -1;
+a {
+  text-decoration: none;
+}
+
+.bg-holder {
+  overflow-x: hidden;
+  width: 100%;
   position: absolute;
+  top: 0;
+}
+.bg-holder img {
+  display: none;
+}
+
+.bg-holder {
+  z-index: -5;
+}
+
+.bg {
+  z-index: -4;
+  position: relative;
   top: 0;
   left: -30vw;
   margin: auto;
@@ -33,9 +45,6 @@ body {
   background-color: #24053E;
   border-bottom-left-radius: 45%;
   border-bottom-right-radius: 45%;
-}
-.bg img {
-  display: none;
 }
 
 header {
@@ -144,6 +153,7 @@ main section p {
 }
 main section + section.creator {
   margin-block-start: 191px;
+  overflow-x: hidden;
 }
 main section + section.creator img {
   width: 281px;
@@ -152,6 +162,8 @@ main section + section.creator img {
 }
 main section + section.creator div > div {
   position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
   top: -50px;
   height: 375px;
   background-color: #24053E;
@@ -176,10 +188,113 @@ main section + section.creator div > div p {
   line-height: 28px; /* 175% */
 }
 
+#bg-img-3 {
+  display: none;
+}
+
 img.hero {
   margin-top: 64px;
   width: 85%;
   align-self: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  margin-bottom: 64px;
+  width: 116px;
+  height: 102.224px;
+  flex-shrink: 0;
+}
+footer div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 768px) {
+  nav {
+    padding: 0 39px;
+  }
+  .bg-holder {
+    width: 100%;
+  }
+  .bg-holder img {
+    display: block;
+    position: absolute;
+  }
+  .bg-holder #bg-img-1 {
+    left: -225px;
+    top: 100px;
+    z-index: -3;
+  }
+  .bg-holder #bg-img-2 {
+    top: 275px;
+    right: -100px;
+    z-index: -3;
+  }
+  img.hero {
+    width: 480px;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main > section + section {
+    margin-block-start: 48px;
+  }
+  main section {
+    flex-direction: row;
+    padding: 0 97px;
+    width: 70%;
+    text-align: left;
+  }
+  main section h3 {
+    flex-shrink: 0;
+    margin-right: 32px;
+  }
+  main section + section.creator {
+    margin-block-start: 191px;
+    padding: 0;
+    width: 95%;
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+  }
+  main section + section.creator img {
+    position: relative;
+    left: 40px;
+  }
+  main section + section.creator #bg-img-3 {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -30%;
+  }
+  main section + section.creator div > div {
+    position: relative;
+    padding: 48px 0 0 56px;
+    top: -120px;
+    right: -210px;
+    width: 457px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: hidden;
+  }
+  main section + section.creator div > div h2 {
+    text-align: left;
+  }
+  main section + section.creator div > div p {
+    text-align: left;
+  }
+  main section + section.creator div > div button {
+    align-self: flex-start;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */
