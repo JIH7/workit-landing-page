@@ -81,6 +81,7 @@ nav a span {
   line-height: 2rem;
   letter-spacing: -0.16px;
   transition: all 0.1s;
+  text-decoration: none;
   border-bottom: 3px solid #44FFA1;
   padding: 2px 0;
 }
@@ -96,6 +97,13 @@ main {
 main > section + section {
   margin-block-start: 40px;
 }
+main section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
 main section h3 {
   margin: 0;
   height: 48px;
@@ -105,6 +113,47 @@ main section h3 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+main section h2 {
+  font-family: "fraunces";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px; /* 128.571% */
+}
+main section p {
+  font-family: "manrope";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px; /* 175% */
+}
+main section + section.creator {
+  margin-block-start: 191px;
+}
+main section + section.creator img {
+  width: 281px;
+  height: 281px;
+  border-radius: 50%;
+}
+main section + section.creator div > div {
+  position: relative;
+  top: -40px;
+  width: 91%;
+  height: 375px;
+  flex-shrink: 0;
+  background-color: #24053E;
+  color: #FCF8FF;
+  padding: 32px;
+}
+main section + section.creator div > div h2 {
+  color: var(white);
+  text-align: center;
+  font-family: Fraunces;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 48px; /* 150% */
 }
 
 img.hero {
