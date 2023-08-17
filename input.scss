@@ -14,12 +14,19 @@ $ghost-white: #FCF8FF;
     src: url(assets/fonts/manrope/Manrope-VariableFont_wght.ttf);
 }
 
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    width: 100%;
+    overflow: hidden;
+    width: 100vw;
     min-height: 100vh;
 
     margin: 0;
@@ -48,6 +55,7 @@ header {
     margin-top: 2rem;
     width: 100%;
 
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 
@@ -69,26 +77,31 @@ header {
 
     button {
         margin-top: 40px;
-
-        font-family: "manrope";
-        font-weight: bold;
-        letter-spacing: -.16px;
-        font-size: 1.229rem;
-
-
-        align-self: center;
         width: 131px;
-        height: 53px;
-        color: $dark-purple;
-        background-color: $eucalyptis;
-
-        border: 3px solid $eucalyptis;
     }
+}
 
-    button:hover {
-        color: $eucalyptis;
-        background-color: $dark-purple;
-    }
+button {
+    margin-top: 40px;
+
+    font-family: "manrope";
+    font-weight: bold;
+    letter-spacing: -.16px;
+    font-size: 16px;
+
+    align-self: center;
+    
+    width: 172px;
+    height: 53px;
+    color: $dark-purple;
+    background-color: $eucalyptis;
+
+    border: 3px solid $eucalyptis;
+}
+
+button:hover {
+    color: $eucalyptis;
+    background-color: $dark-purple;
 }
 
 nav {
@@ -168,10 +181,9 @@ main {
         }
         div > div{
             position: relative;
-            top: -40px; 
-            width: 91%;
+            
+            top: -50px; 
             height: 375px;
-            flex-shrink: 0;
             background-color: $dark-purple;
             color: $ghost-white;
             padding: 32px;
@@ -184,6 +196,15 @@ main {
                 font-style: normal;
                 font-weight: 600;
                 line-height: 48px; /* 150% */
+            }
+
+            p {
+                text-align: center;
+                font-family: Manrope;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 28px; /* 175% */
             }
         }
     }
