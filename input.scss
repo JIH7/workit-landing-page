@@ -13,19 +13,23 @@ $ghost-white: #FCF8FF;
     src: url(assets/fonts/manrope/Manrope-VariableFont_wght.ttf);
 }
 
+// * {
+//     outline: 1px solid #f00 !important;
+//   }
 
+html {
+    overflow-x: hidden;
+}
 
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    position: relative;
+    overflow-x: hidden;
+    margin: 0;
 
     width: 100vw;
     min-height: 100vh;
-
-    margin: 0;
 }
 
 a {
@@ -37,14 +41,12 @@ a {
     width: 100%;
     position: absolute;
     top: 0;
+    left: 0;
+    z-index: -5;
 
     img {
         display: none;
     }
-}
-
-.bg-holder {
-    z-index: -5;
 }
 
 .bg {
@@ -52,8 +54,6 @@ a {
     position: relative;
     top: 0;
     left: -30vw;
-    margin: auto;
-
     height: 540px;
     width: 160vw;
     background-color: $dark-purple;
@@ -69,6 +69,7 @@ header {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     h1 {
         margin: 4rem 1rem 0 1rem;
@@ -119,20 +120,24 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    margin: 0 1rem;
+    width: 90%;
 
     a {
+        
+        width: auto;
         span {
             font-family: 'manrope';
             color: white;
             font-size: 1.3333333rem;
             line-height: 2rem;
             letter-spacing: -.16px;
-            transition: all .1s;
+            transition: color .1s;
             text-decoration: none;
+            text-align: left;
 
             border-bottom: 3px solid $eucalyptis;
-            padding: 2px 0;
+            padding: 0 0 2px 0;
         }
         span:hover {
             color: $eucalyptis;
@@ -195,8 +200,7 @@ main {
         div > div{
             position: relative;
             
-            overflow-x: hidden;
-            overflow-y: visible;
+            overflow: hidden;
             top: -50px; 
             height: 375px;
             background-color: $dark-purple;
@@ -265,11 +269,23 @@ footer {
         width: 100%;
         img {
             display: block;
+            position: relative;
+        }
+        #bg-img-1-holder{
             position: absolute;
+            left: 0;
+            z-index: -3;
+            overflow: hidden;
+
+            height: 100%;
         }
         #bg-img-1 {
             left: -225px;
             top: 100px;
+        }
+        #bg-img-2-holder{
+            position: absolute;
+            right: 0;
             z-index: -3;
         }
         #bg-img-2 {
@@ -334,7 +350,6 @@ footer {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                overflow-y: hidden;
     
                 h2 {
                     text-align: left;
@@ -351,6 +366,47 @@ footer {
     }
 }
 //Large Screens
-@media only screen and (min-width: 1440px) {
-    
+@media only screen and (min-width: 1080px) {
+
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        padding: 0 160px;
+
+        .hero {
+            margin: 46px 25% 104px 25%;
+            width: 50%;
+        }
+
+        section {
+            width: 30%;
+            height: 180px;
+            flex-direction: column;
+            text-align: center;
+            padding: 0%;
+            margin: 0 auto;
+        }
+
+        section + section.creator {
+            height: 900px;
+            width: 100%;
+            img {
+                width: 450.287px;
+                height: 453px;
+                left: -400px;
+            }
+
+            div > div {
+                width: 730px;
+                left: 120px;
+                top: -240px;
+            }
+        }
+
+        > section + section {
+            margin-block-start: 0;
+        }
+    }
 }

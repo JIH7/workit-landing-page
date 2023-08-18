@@ -6,14 +6,18 @@
   font-family: "manrope";
   src: url(assets/fonts/manrope/Manrope-VariableFont_wght.ttf);
 }
+html {
+  overflow-x: hidden;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  overflow-x: hidden;
+  margin: 0;
   width: 100vw;
   min-height: 100vh;
-  margin: 0;
 }
 
 a {
@@ -25,13 +29,11 @@ a {
   width: 100%;
   position: absolute;
   top: 0;
+  left: 0;
+  z-index: -5;
 }
 .bg-holder img {
   display: none;
-}
-
-.bg-holder {
-  z-index: -5;
 }
 
 .bg {
@@ -39,7 +41,6 @@ a {
   position: relative;
   top: 0;
   left: -30vw;
-  margin: auto;
   height: 540px;
   width: 160vw;
   background-color: #24053E;
@@ -53,6 +54,7 @@ header {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 header h1 {
   margin: 4rem 1rem 0 1rem;
@@ -95,7 +97,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  margin: 0 1rem;
+  width: 90%;
+}
+nav a {
+  width: auto;
 }
 nav a span {
   font-family: "manrope";
@@ -103,10 +109,11 @@ nav a span {
   font-size: 1.3333333rem;
   line-height: 2rem;
   letter-spacing: -0.16px;
-  transition: all 0.1s;
+  transition: color 0.1s;
   text-decoration: none;
+  text-align: left;
   border-bottom: 3px solid #44FFA1;
-  padding: 2px 0;
+  padding: 0 0 2px 0;
 }
 nav a span:hover {
   color: #44FFA1;
@@ -162,8 +169,7 @@ main section + section.creator img {
 }
 main section + section.creator div > div {
   position: relative;
-  overflow-x: hidden;
-  overflow-y: visible;
+  overflow: hidden;
   top: -50px;
   height: 375px;
   background-color: #24053E;
@@ -224,11 +230,22 @@ footer div {
   }
   .bg-holder img {
     display: block;
+    position: relative;
+  }
+  .bg-holder #bg-img-1-holder {
     position: absolute;
+    left: 0;
+    z-index: -3;
+    overflow: hidden;
+    height: 100%;
   }
   .bg-holder #bg-img-1 {
     left: -225px;
     top: 100px;
+  }
+  .bg-holder #bg-img-2-holder {
+    position: absolute;
+    right: 0;
     z-index: -3;
   }
   .bg-holder #bg-img-2 {
@@ -284,7 +301,6 @@ footer div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    overflow-y: hidden;
   }
   main section + section.creator div > div h2 {
     text-align: left;
@@ -294,6 +310,43 @@ footer div {
   }
   main section + section.creator div > div button {
     align-self: flex-start;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 160px;
+  }
+  main .hero {
+    margin: 46px 25% 104px 25%;
+    width: 50%;
+  }
+  main section {
+    width: 30%;
+    height: 180px;
+    flex-direction: column;
+    text-align: center;
+    padding: 0%;
+    margin: 0 auto;
+  }
+  main section + section.creator {
+    height: 900px;
+    width: 100%;
+  }
+  main section + section.creator img {
+    width: 450.287px;
+    height: 453px;
+    left: -400px;
+  }
+  main section + section.creator div > div {
+    width: 730px;
+    left: 120px;
+    top: -240px;
+  }
+  main > section + section {
+    margin-block-start: 0;
   }
 }
 
